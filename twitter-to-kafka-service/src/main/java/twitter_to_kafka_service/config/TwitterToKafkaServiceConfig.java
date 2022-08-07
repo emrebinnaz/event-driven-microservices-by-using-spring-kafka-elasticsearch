@@ -11,6 +11,11 @@ import java.util.List;
 @ConfigurationProperties(prefix = "twitter-to-kafka-service")
 public class TwitterToKafkaServiceConfig {
 
-    private List<String> twitterKeywords; // it must match with "twitter-keywords"
+    private List<String> twitterKeywords;
     private String welcomeMessage;
+    private boolean enableMockTweets;
+    private Long mockSleepMs;
+    private Integer mockMinTweetLength;
+    private Integer mockMaxTweetLength;
+
 }
