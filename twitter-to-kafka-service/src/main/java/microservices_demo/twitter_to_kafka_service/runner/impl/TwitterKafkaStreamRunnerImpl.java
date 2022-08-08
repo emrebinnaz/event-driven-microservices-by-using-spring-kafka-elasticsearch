@@ -1,17 +1,16 @@
-package twitter_to_kafka_service.runner.impl;
+package microservices_demo.twitter_to_kafka_service.runner.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import microservices_demo.config.TwitterToKafkaServiceConfig;
+import microservices_demo.twitter_to_kafka_service.listener.TwitterKafkaStatusListener;
+import microservices_demo.twitter_to_kafka_service.runner.StreamRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import twitter4j.FilterQuery;
 import twitter4j.TwitterException;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
-import twitter_to_kafka_service.config.TwitterToKafkaServiceConfig;
-import twitter_to_kafka_service.listener.TwitterKafkaStatusListener;
-import twitter_to_kafka_service.runner.StreamRunner;
 
 import javax.annotation.PreDestroy;
 import java.util.Arrays;

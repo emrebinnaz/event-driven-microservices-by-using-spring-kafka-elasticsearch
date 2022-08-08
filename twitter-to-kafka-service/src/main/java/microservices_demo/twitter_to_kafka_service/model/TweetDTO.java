@@ -1,4 +1,4 @@
-package twitter_to_kafka_service.model;
+package microservices_demo.twitter_to_kafka_service.model;
 
 
 import lombok.Getter;
