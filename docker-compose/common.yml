@@ -1,0 +1,13 @@
+version: '3.7'
+
+networks:
+  application:
+    driver: bridge
+
+# bridge networks uses a software bridge which allows containers connected to the same bridge network while
+# preventing other containers to reach the network. Containers from diff. bridge networks cannot communicate
+# directly with each other because bridge driver put rules in order to prevent communication.
+# If you don't set a bridge network, default bridge network will be created.
+# On deffault bridge, containers can only access each other by IP addresses by default. User defined bridge network
+# allows to resolve hostnames which is more handy to use instead of IP because IP has dynamic. It can be changed
+# in time.

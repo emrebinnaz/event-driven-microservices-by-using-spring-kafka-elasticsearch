@@ -1,0 +1,16 @@
+{"namespace": "com.microservices_demo.kafka.avro.model",
+  "type": "record",
+  "name": "TweetAvroModel",
+  "fields": [
+    {"name": "tweetId", "type": "string"},
+    {"name": "text", "type": "string"},
+    {"name": "label", "type": {
+      "name": "TweetLabel",
+      "type": "enum",
+      "symbols": [
+        "HATEFUL",
+        "NORMAL"
+      ]
+    }}
+  ]
+}
