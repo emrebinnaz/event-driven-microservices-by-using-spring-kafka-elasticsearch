@@ -32,5 +32,20 @@ kafka-config:
   num-of-partitions: 3
   replication-factor: 3
 
+kafka-producer-config:
+  key-serializer-class: org.apache.kafka.common.serialization.LongSerializer # our key will be Long type
+  value-serializer-class: io.confluent.kafka.serializers.KafkaAvroSerializer
+  compression-type: snappy # Arranges compression ratio for higher compress / decompress speed
+  acks: all # wait ack from all replicas to be more resilliant | 1 -> wait only current broker's ack | 0 -> no ack.
+  batch-size: 16384  # 16 kb.
+  batch-size-boost-factor: 100 # Tune for higher throughput
+  linger-ms: 5 # Add a delay on producer in case of light load. refers to time to wait before sending messages out to Kafka.
+  request-timeout-ms: 60000 #  after 60 seconds, if no acknowledgement comes, producers will throw timeour error.
+  retry-count: 5 # It will retry 5 times in case of error.
+
+  ##To increase throughput we can increase the batched data in request.
+  ## This can be done by increasing the batch size, adding a compression as batching is done after compression,
+  ##  and increase the linger ms to add a delay on producer client to wait more and send more data at once.
+
 
 

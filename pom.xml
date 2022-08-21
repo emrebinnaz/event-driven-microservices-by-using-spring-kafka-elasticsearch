@@ -32,7 +32,18 @@
 		<avro.version>1.10.0</avro.version>
 		<springkafka.version>2.9.0</springkafka.version>
 		<retry.version>1.3.3</retry.version>
+		<kafka-avro-serializer.version>5.5.1</kafka-avro-serializer.version>
 	</properties>
+	<repositories>
+		<repository>
+			<id>confluent</id>
+			<url>https://packages.confluent.io/maven/</url>
+		</repository>
+		<!-- Sometimes, Maven does not find a mentioned dependency in central repository as well.
+		It then stops the build process and output error message to console.
+		To prevent such situation, Maven provides concept of Remote Repository,
+		which is developer's own custom repository containing required libraries or other project jars.-->
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -107,6 +118,37 @@
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>common-config</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>kafka-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
+			<dependency>
+				<groupId>io.confluent</groupId>
+				<artifactId>kafka-avro-serializer</artifactId>
+				<version>${kafka-avro-serializer.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.swagger</groupId>
+						<artifactId>swagger-annotations</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.swagger</groupId>
+						<artifactId>swagger-core</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 		</dependencies>
