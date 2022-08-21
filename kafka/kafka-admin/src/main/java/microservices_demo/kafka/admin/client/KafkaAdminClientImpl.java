@@ -95,8 +95,8 @@ public class KafkaAdminClientImpl implements KafkaAdminClient{
         try {
             return webClient.method(HttpMethod.GET)
                     .uri(kafkaConfigData.getSchemaRegistryUrl())
-                    .exchange()
-                    .map(ClientResponse::statusCode)
+                    .retrieve()
+                    .bodyToMono(HttpStatus.class)
                     .block(); // block for to be able to get results synchronously.
         } catch (Exception e) {
             return HttpStatus.SERVICE_UNAVAILABLE;
