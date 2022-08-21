@@ -6,8 +6,7 @@ import twitter4j.TwitterException;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-public interface StreamRunner {
+public interface MockStreamRunner {
 
-    void start() throws TwitterException;
-
+    List<TweetDTO> getTweets() throws TwitterException, FileNotFoundException;
 }

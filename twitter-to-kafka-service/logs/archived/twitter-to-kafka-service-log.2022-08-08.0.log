@@ -1,0 +1,15 @@
+2022-08-08 19:43:12 [main] INFO  m.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.16 on emre-Lenovo-ideapad-320-15IKB with PID 16604 (/home/emre/Desktop/Spring/microservices-demo/twitter-to-kafka-service/target/classes started by emre in /home/emre/Desktop/Spring/microservices-demo)
+2022-08-08 19:43:12 [main] INFO  m.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-08-08 19:43:12 [main] INFO  m.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.78 seconds (JVM running for 1.871)
+2022-08-08 19:43:32 [main] INFO  m.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.16 on emre-Lenovo-ideapad-320-15IKB with PID 16671 (/home/emre/Desktop/Spring/microservices-demo/twitter-to-kafka-service/target/classes started by emre in /home/emre/Desktop/Spring/microservices-demo)
+2022-08-08 19:43:32 [main] INFO  m.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-08-08 19:43:32 [main] INFO  m.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.794 seconds (JVM running for 1.448)
+2022-08-08 19:44:03 [main] INFO  m.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.16 on emre-Lenovo-ideapad-320-15IKB with PID 16744 (/home/emre/Desktop/Spring/microservices-demo/twitter-to-kafka-service/target/classes started by emre in /home/emre/Desktop/Spring/microservices-demo)
+2022-08-08 19:44:03 [main] INFO  m.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-08-08 19:44:03 [main] INFO  m.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.675 seconds (JVM running for 1.212)
+2022-08-08 19:44:09 [main] INFO  m.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.16 on emre-Lenovo-ideapad-320-15IKB with PID 16829 (/home/emre/Desktop/Spring/microservices-demo/twitter-to-kafka-service/target/classes started by emre in /home/emre/Desktop/Spring/microservices-demo)
+2022-08-08 19:44:09 [main] INFO  m.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-08-08 19:44:10 [main] INFO  m.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.672 seconds (JVM running for 2.017)
+2022-08-08 19:45:23 [main] INFO  m.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.16 on emre-Lenovo-ideapad-320-15IKB with PID 16960 (/home/emre/Desktop/Spring/microservices-demo/twitter-to-kafka-service/target/classes started by emre in /home/emre/Desktop/Spring/microservices-demo)
+2022-08-08 19:45:23 [main] INFO  m.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-08-08 19:45:23 [main] INFO  m.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.024 seconds (JVM running for 1.615)

@@ -3,9 +3,8 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.microservices_demo.kafka.avro.model;
+package microservices_demo.kafka.avro.model;
 
-import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -14,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 148909772479595558L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TweetAvroModel\",\"namespace\":\"com.microservices_demo.kafka.avro.model\",\"fields\":[{\"name\":\"tweetId\",\"type\":\"string\"},{\"name\":\"text\",\"type\":\"string\"},{\"name\":\"label\",\"type\":{\"type\":\"enum\",\"name\":\"TweetLabel\",\"symbols\":[\"HATEFUL\",\"NORMAL\"]}}]}");
+  private static final long serialVersionUID = 7392591041839524275L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TweetAvroModel\",\"namespace\":\"com.microservices_demo.kafka.avro.model\",\"fields\":[{\"name\":\"tweetId\",\"type\":\"string\"},{\"name\":\"text\",\"type\":\"string\"},{\"name\":\"label\",\"type\":{\"type\":\"enum\",\"name\":\"TweetLabelAvroModel\",\"symbols\":[\"HATEFUL\",\"NORMAL\"]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -73,7 +72,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
 
    private java.lang.CharSequence tweetId;
    private java.lang.CharSequence text;
-   private com.microservices_demo.kafka.avro.model.TweetLabel label;
+   private TweetLabelAvroModel label;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -88,7 +87,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
    * @param text The new value for text
    * @param label The new value for label
    */
-  public TweetAvroModel(java.lang.CharSequence tweetId, java.lang.CharSequence text, com.microservices_demo.kafka.avro.model.TweetLabel label) {
+  public TweetAvroModel(java.lang.CharSequence tweetId, java.lang.CharSequence text, TweetLabelAvroModel label) {
     this.tweetId = tweetId;
     this.text = text;
     this.label = label;
@@ -112,7 +111,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
     switch (field$) {
     case 0: tweetId = (java.lang.CharSequence)value$; break;
     case 1: text = (java.lang.CharSequence)value$; break;
-    case 2: label = (com.microservices_demo.kafka.avro.model.TweetLabel)value$; break;
+    case 2: label = (TweetLabelAvroModel)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -155,7 +154,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'label' field.
    * @return The value of the 'label' field.
    */
-  public com.microservices_demo.kafka.avro.model.TweetLabel getLabel() {
+  public TweetLabelAvroModel getLabel() {
     return label;
   }
 
@@ -164,7 +163,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
    * Sets the value of the 'label' field.
    * @param value the value to set.
    */
-  public void setLabel(com.microservices_demo.kafka.avro.model.TweetLabel value) {
+  public void setLabel(TweetLabelAvroModel value) {
     this.label = value;
   }
 
@@ -172,8 +171,8 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
    * Creates a new TweetAvroModel RecordBuilder.
    * @return A new TweetAvroModel RecordBuilder
    */
-  public static com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder newBuilder() {
-    return new com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder();
+  public static TweetAvroModel.Builder newBuilder() {
+    return new TweetAvroModel.Builder();
   }
 
   /**
@@ -181,11 +180,11 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
    * @param other The existing builder to copy.
    * @return A new TweetAvroModel RecordBuilder
    */
-  public static com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder newBuilder(com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder other) {
+  public static TweetAvroModel.Builder newBuilder(TweetAvroModel.Builder other) {
     if (other == null) {
-      return new com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder();
+      return new TweetAvroModel.Builder();
     } else {
-      return new com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder(other);
+      return new TweetAvroModel.Builder(other);
     }
   }
 
@@ -194,11 +193,11 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
    * @param other The existing instance to copy.
    * @return A new TweetAvroModel RecordBuilder
    */
-  public static com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder newBuilder(com.microservices_demo.kafka.avro.model.TweetAvroModel other) {
+  public static TweetAvroModel.Builder newBuilder(TweetAvroModel other) {
     if (other == null) {
-      return new com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder();
+      return new TweetAvroModel.Builder();
     } else {
-      return new com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder(other);
+      return new TweetAvroModel.Builder(other);
     }
   }
 
@@ -211,7 +210,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
 
     private java.lang.CharSequence tweetId;
     private java.lang.CharSequence text;
-    private com.microservices_demo.kafka.avro.model.TweetLabel label;
+    private TweetLabelAvroModel label;
 
     /** Creates a new Builder */
     private Builder() {
@@ -222,7 +221,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder other) {
+    private Builder(TweetAvroModel.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.tweetId)) {
         this.tweetId = data().deepCopy(fields()[0].schema(), other.tweetId);
@@ -242,7 +241,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
      * Creates a Builder by copying an existing TweetAvroModel instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.microservices_demo.kafka.avro.model.TweetAvroModel other) {
+    private Builder(TweetAvroModel other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.tweetId)) {
         this.tweetId = data().deepCopy(fields()[0].schema(), other.tweetId);
@@ -272,7 +271,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'tweetId'.
       * @return This builder.
       */
-    public com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder setTweetId(java.lang.CharSequence value) {
+    public TweetAvroModel.Builder setTweetId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.tweetId = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +291,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'tweetId' field.
       * @return This builder.
       */
-    public com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder clearTweetId() {
+    public TweetAvroModel.Builder clearTweetId() {
       tweetId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -312,7 +311,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'text'.
       * @return This builder.
       */
-    public com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder setText(java.lang.CharSequence value) {
+    public TweetAvroModel.Builder setText(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.text = value;
       fieldSetFlags()[1] = true;
@@ -332,7 +331,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'text' field.
       * @return This builder.
       */
-    public com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder clearText() {
+    public TweetAvroModel.Builder clearText() {
       text = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -342,7 +341,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * Gets the value of the 'label' field.
       * @return The value.
       */
-    public com.microservices_demo.kafka.avro.model.TweetLabel getLabel() {
+    public TweetLabelAvroModel getLabel() {
       return label;
     }
 
@@ -352,7 +351,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'label'.
       * @return This builder.
       */
-    public com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder setLabel(com.microservices_demo.kafka.avro.model.TweetLabel value) {
+    public TweetAvroModel.Builder setLabel(TweetLabelAvroModel value) {
       validate(fields()[2], value);
       this.label = value;
       fieldSetFlags()[2] = true;
@@ -372,7 +371,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'label' field.
       * @return This builder.
       */
-    public com.microservices_demo.kafka.avro.model.TweetAvroModel.Builder clearLabel() {
+    public TweetAvroModel.Builder clearLabel() {
       label = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -385,7 +384,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
         TweetAvroModel record = new TweetAvroModel();
         record.tweetId = fieldSetFlags()[0] ? this.tweetId : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.text = fieldSetFlags()[1] ? this.text : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.label = fieldSetFlags()[2] ? this.label : (com.microservices_demo.kafka.avro.model.TweetLabel) defaultValue(fields()[2]);
+        record.label = fieldSetFlags()[2] ? this.label : (TweetLabelAvroModel) defaultValue(fields()[2]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -435,7 +434,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
 
       this.text = in.readString(this.text instanceof Utf8 ? (Utf8)this.text : null);
 
-      this.label = com.microservices_demo.kafka.avro.model.TweetLabel.values()[in.readEnum()];
+      this.label = TweetLabelAvroModel.values()[in.readEnum()];
 
     } else {
       for (int i = 0; i < 3; i++) {
@@ -449,7 +448,7 @@ public class TweetAvroModel extends org.apache.avro.specific.SpecificRecordBase 
           break;
 
         case 2:
-          this.label = com.microservices_demo.kafka.avro.model.TweetLabel.values()[in.readEnum()];
+          this.label = TweetLabelAvroModel.values()[in.readEnum()];
           break;
 
         default:

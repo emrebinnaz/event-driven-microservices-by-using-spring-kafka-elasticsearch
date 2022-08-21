@@ -13,7 +13,7 @@
     {
       "name": "label",
       "type": {
-        "name": "TweetLabel",
+        "name": "TweetLabelAvroModel",
         "type": "enum",
         "symbols": [
           "HATEFUL",

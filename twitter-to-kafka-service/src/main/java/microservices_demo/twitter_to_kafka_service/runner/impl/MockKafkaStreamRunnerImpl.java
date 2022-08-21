@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import microservices_demo.config.TwitterToKafkaServiceConfigData;
 import microservices_demo.twitter_to_kafka_service.model.TweetDTO;
+import microservices_demo.twitter_to_kafka_service.runner.MockStreamRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import twitter4j.TwitterException;
@@ -21,12 +22,16 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @ConditionalOnProperty(name = "twitter-to-kafka-service.enable-mock-tweets", havingValue = "true")
-public class MockKafkaStreamRunnerImpl implements StreamRunner {
-    private final TwitterToKafkaServiceConfigData kafkaServiceConfig;
+public class MockKafkaStreamRunnerImpl implements StreamRunner , MockStreamRunner {
 
     @Override
-    public void start() throws TwitterException, FileNotFoundException {
-        final List<TweetDTO> tweetDTOList = prepareTweetListFromCsv();
+    public void start() throws TwitterException {
+
+    }
+
+    @Override
+    public List<TweetDTO> getTweets() throws TwitterException, FileNotFoundException {
+        return prepareTweetListFromCsv();
     }
 
     private List<TweetDTO> prepareTweetListFromCsv() throws FileNotFoundException {

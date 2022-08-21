@@ -33,7 +33,7 @@ kafka-config:
   replication-factor: 3
 
 kafka-producer-config:
-  key-serializer-class: org.apache.kafka.common.serialization.LongSerializer # our key will be Long type
+  key-serializer-class: org.apache.kafka.common.serialization.StringSerializer # our key will be String type. We will group tweets by their sentiment.
   value-serializer-class: io.confluent.kafka.serializers.KafkaAvroSerializer
   compression-type: snappy # Arranges compression ratio for higher compress / decompress speed
   acks: all # wait ack from all replicas to be more resilliant | 1 -> wait only current broker's ack | 0 -> no ack.

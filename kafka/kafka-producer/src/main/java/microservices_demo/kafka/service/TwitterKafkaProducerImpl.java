@@ -1,6 +1,6 @@
-package com.microservices_demo.service;
+package microservices_demo.kafka.service;
 
-import com.microservices_demo.kafka.avro.model.TweetAvroModel;
+import microservices_demo.kafka.avro.model.TweetAvroModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.RecordMetadata;
@@ -12,24 +12,23 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import javax.annotation.PreDestroy;
 
-@Service
 @RequiredArgsConstructor
 @Slf4j
-public class TwitterKafkaProducerImpl implements KafkaProducer<Long, TweetAvroModel> {
-
-    private final KafkaTemplate<Long, TweetAvroModel> kafkaTemplate;
+@Service
+public class TwitterKafkaProducerImpl implements KafkaProducer<String, TweetAvroModel> {
+    private final KafkaTemplate<String, TweetAvroModel> kafkaTemplate;
 
     @Override
-    public void send(String topicName, Long key, TweetAvroModel message) {
+    public void send(String topicName, String key, TweetAvroModel message) {
         log.info("Sending message = '{}' to topic = '{}'", message, topicName);
-        final ListenableFuture<SendResult<Long, TweetAvroModel>> listenableFuture = kafkaTemplate.send(topicName, key, message);
+        final ListenableFuture<SendResult<String, TweetAvroModel>> listenableFuture = kafkaTemplate.send(topicName, key, message);
         // register callback methods for handling events when the response return.
         //send method of Kafka template is async operation so it returns listenable future
         addCallback(topicName, message, listenableFuture);
     }
 
     private void addCallback(String topicName, TweetAvroModel message,
-                             ListenableFuture<SendResult<Long, TweetAvroModel>> listenableFuture) {
+                             ListenableFuture<SendResult<String, TweetAvroModel>> listenableFuture) {
 
         listenableFuture.addCallback(new ListenableFutureCallback<>() {
             @Override
@@ -38,7 +37,7 @@ public class TwitterKafkaProducerImpl implements KafkaProducer<Long, TweetAvroMo
             }
 
             @Override
-            public void onSuccess(SendResult<Long, TweetAvroModel> result) {
+            public void onSuccess(SendResult<String, TweetAvroModel> result) {
                 RecordMetadata recordMetadata = result.getRecordMetadata();
                 log.debug("Received new metadata. Topic : {}. \n Partition {}. \n Offset {}; \n Timestamp: {} \n, at time {}",
                         recordMetadata.topic(),
@@ -59,4 +58,6 @@ public class TwitterKafkaProducerImpl implements KafkaProducer<Long, TweetAvroMo
             kafkaTemplate.destroy();
         }
     }
+
+
 }

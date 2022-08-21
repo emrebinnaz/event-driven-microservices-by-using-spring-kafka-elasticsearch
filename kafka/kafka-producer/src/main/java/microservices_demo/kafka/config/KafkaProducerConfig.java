@@ -1,4 +1,4 @@
-package com.microservices_demo.config;
+package microservices_demo.kafka.config;
 
 import lombok.RequiredArgsConstructor;
 import microservices_demo.config.KafkaConfigData;
