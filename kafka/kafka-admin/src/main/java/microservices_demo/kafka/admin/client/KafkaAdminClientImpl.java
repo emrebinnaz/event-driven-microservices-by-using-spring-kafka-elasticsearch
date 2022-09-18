@@ -138,7 +138,7 @@ public class KafkaAdminClientImpl implements KafkaAdminClient{
     private Collection<TopicListing> doGetTopics(RetryContext retryContext)
             throws ExecutionException, InterruptedException {
 
-        log.info("Reading kafka topoic {}, attempt {}", kafkaConfigData.getTopicNamesToCreate().toArray(),
+        log.info("Reading kafka topic {}, attempt {}", kafkaConfigData.getTopicNamesToCreate().toArray(),
                 retryContext.getRetryCount());
         Collection<TopicListing> topics = adminClient.listTopics().listings().get();
         if(topics != null) {

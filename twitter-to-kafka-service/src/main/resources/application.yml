@@ -43,7 +43,7 @@ kafka-producer-config:
   request-timeout-ms: 60000 #  after 60 seconds, if no acknowledgement comes, producers will throw timeour error.
   retry-count: 5 # It will retry 5 times in case of error.
 
-  ##To increase throughput we can increase the batched data in request.
+  ## To increase throughput we can increase the batched data in request.
   ## This can be done by increasing the batch size, adding a compression as batching is done after compression,
   ##  and increase the linger ms to add a delay on producer client to wait more and send more data at once.
 

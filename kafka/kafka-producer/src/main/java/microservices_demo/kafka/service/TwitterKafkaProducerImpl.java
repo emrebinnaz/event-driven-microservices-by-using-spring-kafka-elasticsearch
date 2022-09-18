@@ -58,6 +58,4 @@ public class TwitterKafkaProducerImpl implements KafkaProducer<String, TweetAvro
             kafkaTemplate.destroy();
         }
     }
-
-
 }
